@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
 	def index
-		@Title = "Zome Twitter";
+		@Title = "Listing All The Tweets";
 
 	end
 	

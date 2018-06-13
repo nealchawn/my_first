@@ -1,6 +1,21 @@
-<body>
+
 <% #Show all tweets%>
-<h1><%= @Title %><h1>
-<h3>Hey There Zombie Users!!</h3>
-<%= Tweet.all.first%>
-<body>
+<h2><%= @Title %>
+
+
+<table>
+	<tr>
+		<th>Status</th>
+		<th>Zombie</th>
+	</tr>
+	<% Tweet.all.each do |tweet| %>
+	<tr>
+		<td><%= link_to tweet.status , tweet %></td>
+		<td><%= link_to tweet.zombie.name , zombie_path(tweet.zombie.name) %></td>
+	</tr>
+	<% end %>
+	<%if Tweet.all.size == 0 %>
+	 <em>No Tweets Found </em>
+	 <% end %>
+</table>
+</h2>
