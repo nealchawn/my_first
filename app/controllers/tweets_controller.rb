@@ -5,7 +5,10 @@ class TweetsController < ApplicationController
 	end
 	
 	def show
-		
+		if params[:id]
+			#@tweet = Tweet.where(zombie: Zombie.where(name: params[:zombie]))
+			@tweet = Tweet.find(params[:id])
+		end
 	end
 	
 	def new

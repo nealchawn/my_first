@@ -1,5 +1,4 @@
 class Tweet < ApplicationRecord
-	#validates_presence_of :status, ;
-	belongs_to :zombie;
-
+	belongs_to :zombie
+	validates_presence_of :zombie_id
 end

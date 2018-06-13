@@ -1,0 +1,6 @@
+<% #Show a Tweet%>
+<p>
+	<h3><strong><%= @zombie.name %></strong></h3>
+	<p>Posts: <br><br><strong><%=  @zombie.tweets.all.first.status %></strong>
+	created_at: <%= @zombie.tweets.all.first.created_at.strftime("%b-%d-%y") %></p>
+</p>

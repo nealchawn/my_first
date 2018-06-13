@@ -2,8 +2,8 @@
 
 one:
   status: MyString
-  zombie_id: MyString
+  zombie_id: 
 
 two:
   status: MyString
-  zombie_id: MyString
+  zombie_id: 
