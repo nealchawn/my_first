@@ -1,6 +1,6 @@
 <% #Show a Tweet%>
 <p>
 	<h3><strong>Status: <%= @tweet.status %></strong></h3>
-	<p>zombie post by <strong><%= link_to @tweet.zombie.name,zombie_path(@tweet.zombie.name) %></strong>
+	<p>zombie post by <strong><%= link_to @tweet.zombie.name, zombie_path(@tweet.zombie.name) %></strong>
 	Created_at: <%= @tweet.created_at.strftime("%b-%d-%y") %></p>
 </p>

@@ -1,21 +1,21 @@
 
 <% #Show all tweets%>
-<h2><%= @Title %>
+<h2><%= @title %></h2>
 
 
-<table>
-	<tr>
-		<th>Status</th>
-		<th>Zombie</th>
-	</tr>
-	<% Tweet.all.each do |tweet| %>
-	<tr>
-		<td><%= link_to tweet.status , tweet %></td>
-		<td><%= link_to tweet.zombie.name , zombie_path(tweet.zombie.name) %></td>
-	</tr>
-	<% end %>
-	<%if Tweet.all.size == 0 %>
-	 <em>No Tweets Found </em>
-	 <% end %>
-</table>
-</h2>
+
+<ul class="list-unstyled">
+<% Tweet.all.each do |tweet| %>
+  <li class="media">
+    <img class="mr-3" src=".../64x64" alt="Generic placeholder image">
+    <div class="media-body"><h2 class="mt-0 mb-1">
+      <%= link_to tweet.status , tweet %></h2>    <%= link_to "Edit", edit_tweet_path(tweet) %> <%= link_to "Destroy", tweet, method: :delete %>
+      <h5 class="mt-0 mb-1"> posted by: <%= link_to tweet.zombie.name , zombie_path(tweet.zombie.name) %></h5>
+    </div>
+  </li>
+<% end %>
+</ul>
+<%if Tweet.all.size == 0 %>
+	<em>No Tweets Found </em>
+<% end %>
+
